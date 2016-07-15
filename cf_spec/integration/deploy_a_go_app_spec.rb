@@ -234,6 +234,7 @@ describe 'CF Go Buildpack' do
       specify do
         expect(app).to be_running
         expect(app).to have_logged('Hello from foo!')
+        expect(app).to have_logged('DEBUG: default_version_for go is')
 
         browser.visit_path('/')
         expect(browser).to have_body('hello, world')
@@ -251,6 +252,7 @@ describe 'CF Go Buildpack' do
       specify do
         expect(app).to be_running
         expect(app).to have_logged('Hello from foo!')
+        expect(app).to have_logged('DEBUG: default_version_for go is')
 
         browser.visit_path('/')
         expect(browser).to have_body('hello, world')
